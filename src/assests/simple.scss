@@ -1,29 +1,67 @@
 $orange: #ff9a00;
-$box-shadow: 0px 0px 30px $orange;
+$purple: #5003c0;
+$box-shadow: 0px 0px 30px rgba($orange, 0.6); // Added opacity so it glows softly rather than looking harsh
+
+// Set a CSS variable for the inline style fallback
+:root {
+  --orange-color: #{$orange};
+}
 
 .bg-custom {
-  background-color: #dedede;
-  color: #0f0e0e;
+  background-color: #1a1a1a; // Darker background makes the glow pop much better than light gray
+  color: #ffffff;
+}
+
+.custom-font {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-style: italic;
+  font-family: "Georgia", serif;
+  color: #ffffff;
 }
 
 .custom-progress {
   box-shadow: $box-shadow;
-  height: 30px;
-}
-
-.bg-orange {
-  color: $orange;
+  height: 35px;
+  background-color: #2a2a2a; // Dark track for the bar
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .custom-btn {
-  box-shadow: 0 0 30px #5003c0;
-  // background-color: #0f0e0e;
-  padding: 3px 8px 5px 8px;
+  background-color: $purple;
+  color: white;
+  box-shadow: 0 0 15px rgba($purple, 0.5);
+  width: 35px;
+  height: 35px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: lighten($purple, 10%);
+    transform: scale(1.05);
+  }
 }
 
-.custom-font {
-  font-size: 40px;
-  font-weight: 700;
-  font-style: italic;
-  font-family: serif;
+.custom-form {
+  box-shadow: 0px 0px 15px rgba($purple, 0.3);
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  color: white;
+  width: 80px; // Solid defined width so it doesn't distort on small screens
+
+  &:focus {
+    background-color: #333;
+    color: white;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 20px rgba($purple, 0.6);
+  }
+}
+
+.control-label {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #cccccc;
 }
