@@ -3,11 +3,12 @@ import "./App.css";
 import SimpleCounter from "./Components/SimpleCounter";
 import "./assests/simple.scss";
 import ProgressBarComponent from "./Components/SimpleCounter";
+import FunctionalProgressBar from "./Components/FunctionalProgressBar";
 
 function App() {
   return (
     <div className="App">
-      <ProgressBarComponent />
+      <FunctionalProgressBar />
     </div>
   );
 }
